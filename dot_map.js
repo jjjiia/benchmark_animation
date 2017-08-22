@@ -1,7 +1,6 @@
 $(function() {
 	queue()
 		.defer(d3.csv, "546_0803.csv")
-		.defer(d3.json,"topogrid.json")
     .await(dataDidLoad);
 })
 
