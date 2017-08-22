@@ -29,7 +29,7 @@ function drawDots(data,svg){
 "#76d8ac"]
 	var projection = d3.geo.mercator().scale(20000000).center([-71.089447,42.362])
     var r = d3.scale.linear().domain([0,20000]).range([8,20])
-    var t = d3.scale.linear().domain([80317101714,80317205959]).range([0,10000])
+    var t = d3.scale.linear().domain([80317101714,80317205959]).range([0,20000])
     var o = d3.scale.linear().domain([0.07,2.82]).range([0,1])
     var c = d3.scale.linear().domain([-0.07,.35]).range([0,colors.length-1])
     
@@ -55,7 +55,7 @@ function drawDots(data,svg){
             return projectedLat
         })
         .attr("fill",function(d){
-          //  return "$000"
+            return "$000"
             return colors[Math.round(c(d["column o"])) ]
         })
 	    .style("opacity",function(d){
@@ -71,7 +71,7 @@ function drawDots(data,svg){
             .delay(function(d){
             return t(d.timestamp)+1000
         })
-        .duration(4000)
+        .duration(2000)
         .attr("r",0)
             return r(d["column a"])
         })        
